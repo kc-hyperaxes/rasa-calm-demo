@@ -46,3 +46,17 @@ flows:
         next: "cancel_flow"
       - id: "cancel_flow"
         action: action_cancel_flow
+
+  pattern_completed:
+    description:  a flow has been completed and there is nothing else to be done
+    steps:
+      - noop:
+        next:
+          # - if: "{{context.previous_flow_name}} == list_contacts"
+          - if: context.previous_flow_name == 'list_contacts'
+            then:
+              - action: action_cancel_flow
+                next: END
+          - else:
+            - action: utter_can_do_something_else
+              next: END

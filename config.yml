@@ -16,3 +16,4 @@ policies:
 - name: rasa_plus.ml.IntentlessPolicy
 
 #  - name: RulePolicy
+assistant_id: 20240312-114807-acoustic-winch
