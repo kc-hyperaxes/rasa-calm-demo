@@ -53,7 +53,7 @@ flows:
       - noop:
         next:
           # - if: "{{context.previous_flow_name}} == list_contacts"
-          - if: context.previous_flow_name == 'list_contacts'
+          - if: context.previous_flow_name == 'list your contacts'
             then:
               - action: action_cancel_flow
                 next: END
